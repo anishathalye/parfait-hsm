@@ -1,0 +1,8 @@
+obj
+.depend
+*.exe
+*.d
+*.o
+*.a
+dist/
+hints/

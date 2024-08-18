@@ -1,0 +1,11 @@
+CFLAGS += -Ifw -Ihacl
+
+fw/%.mem: fw/%.bin
+	bin2coe $(BIN2COEFLAGS) --depth $(ROM_DEPTH) -i $< -o $@ --mem
+
+CLEAN_FILES += $(shell find fw -name '*.o') fw/*.bin fw/*.coe fw/*.lst fw/*.elf fw/*.mem
+
+HACL_LIB := fw/K2.o fw/K2_EverCrypt.o
+
+fw/firmware.elf: fw/rom.ld fw/vectors.o fw/startup.o fw/drivers.o fw/app.o fw/string.o fw/dummy.o fw/i64_shl.o fw/i64_shr.o $(HACL_LIB)
+	$(LD) $(LDFLAGS) --defsym=__compcert_i64_shl=i64_shl --defsym=__compcert_i64_shr=i64_shr -T $^ -o $@

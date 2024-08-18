@@ -1,0 +1,328 @@
+{
+    "Architecture": "riscV",
+    "Asm Ast": {
+        "Functions": [
+            {
+                "Fun Alignment": 0,
+                "Fun Code": [
+                    {
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ],
+                        "Instruction Name": "Pallocframe"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ],
+                        "Instruction Name": "Psw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Symbol": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Ploadsymbol_high"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "OffsetSymbolLow": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Plw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ],
+                        "Instruction Name": "Paddiw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Symbol": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Ploadsymbol_high"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "OffsetSymbolLow": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Psw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "ALabel": 5
+                            }
+                        ],
+                        "Instruction Name": "Pbnew"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ],
+                        "Instruction Name": "Paddiw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Symbol": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Ploadsymbol_high"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "OffsetSymbolLow": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Psw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "ALabel": 5
+                            }
+                        ],
+                        "Instruction Name": "Plabel"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Symbol": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Ploadsymbol_high"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "OffsetSymbolLow": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Plw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ],
+                        "Instruction Name": "Paddiw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Symbol": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Ploadsymbol_high"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "OffsetSymbolLow": {
+                                    "Name": "x",
+                                    "Offset": 0
+                                }
+                            }
+                        ],
+                        "Instruction Name": "Psw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ],
+                        "Instruction Name": "Plw"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ],
+                        "Instruction Name": "Pfreeframe"
+                    },
+                    {
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ],
+                        "Instruction Name": "Pj_r"
+                    }
+                ],
+                "Fun Inline": false,
+                "Fun Name": "main",
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Storage Class": "Extern"
+            }
+        ],
+        "Global Variables": [
+            {
+                "Var Alignment": 4,
+                "Var Init": [
+                    {
+                        "Init_int32": 1
+                    }
+                ],
+                "Var Name": "x",
+                "Var Readonly": false,
+                "Var Section": {
+                    "Init": "Init",
+                    "Section Name": "Data"
+                },
+                "Var Storage Class": "Extern",
+                "Var Volatile": false
+            }
+        ]
+    },
+    "Compilation Unit": "goto.c",
+    "Compile Info": {
+        "command": "ccomp -fno-fpu -std=c18 -fstruct-passing -sdump goto.c -S",
+        "directory": "/knox/test/crv32/handwritten",
+        "file": "goto.c"
+    },
+    "System": "linux",
+    "Version": "CompCertJDUMPRelease: 3.14"
+}

@@ -1,0 +1,5313 @@
+{
+    "Version": "CompCertJDUMPRelease: 3.14",
+    "Architecture": "riscV",
+    "System": "linux",
+    "Compile Info": {
+        "directory": "/Users/anish/Documents/Anish/src/notary/parfait-hsm/hardware/hsms/picorv32-ecdsa/spec",
+        "command": "/usr/local/bin/ccomp -I../impl/fw -I../impl/fw/hacl -fno-fpu -std=c18 -fstruct-passing -fpacked-structs -sdump ../impl/fw/K2.c -S",
+        "file": "../impl/fw/K2.c"
+    },
+    "Compilation Unit": "../impl/fw/K2.c",
+    "Asm Ast": {
+        "Global Variables": [],
+        "Functions": [
+            {
+                "Fun Name": "K2_Ecdsa_Impl_main",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plbu",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbeqw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "ALabel": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbeqw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "ALabel": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_none"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_sign"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_initialize"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_sign",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 32
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x10"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x18"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_sign_counter_ok"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandiw",
+                        "Args": [
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 255
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x8"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x18"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_sign_signature"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 255
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x18"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_sign_update_state"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 64
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x19"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_maybe_clear_buffer"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 2
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x19"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 32
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_maybe_clear_buffer",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 11
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbgeuw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "ALabel": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x13"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plbu",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_l",
+                        "Args": [
+                            {
+                                "ALabel": 11
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_sign_signature",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 64
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x10"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 25
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 26
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 27
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 28
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 29
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 30
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 31
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 32
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 33
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 34
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 35
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 36
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 37
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 38
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 39
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 40
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 41
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 42
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 43
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 44
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 45
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 46
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 47
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 48
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 49
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 50
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 51
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 52
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 53
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 54
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 55
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "Hacl_HMAC_compute_sha2_256"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 32
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x18"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "Hacl_P256_ecdsa_sign_p256_without_hash"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 255
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x18"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 64
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_sign_update_state",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 32
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x8"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "memcpy"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x5"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x14"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x29"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x7"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x30"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbuiltin",
+                        "Args": [
+                            {
+                                "ExternalFunction": {
+                                    "ExternalFunction": "EF_builtin",
+                                    "Name": "__builtin_addl"
+                                }
+                            },
+                            {
+                                "Args": [
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x28"
+                                            },
+                                            "Lo": {
+                                                "Register": "x13"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x17"
+                                            },
+                                            "Lo": {
+                                                "Register": "x16"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Res": {
+                                    "SplitLong": {
+                                        "Hi": {
+                                            "Register": "x15"
+                                        },
+                                        "Lo": {
+                                            "Register": "x7"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x15"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x7"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxoriw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxoriw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbuiltin",
+                        "Args": [
+                            {
+                                "ExternalFunction": {
+                                    "ExternalFunction": "EF_builtin",
+                                    "Name": "__builtin_addl"
+                                }
+                            },
+                            {
+                                "Args": [
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x6"
+                                            },
+                                            "Lo": {
+                                                "Register": "x30"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x17"
+                                            },
+                                            "Lo": {
+                                                "Register": "x16"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Res": {
+                                    "SplitLong": {
+                                        "Hi": {
+                                            "Register": "x29"
+                                        },
+                                        "Lo": {
+                                            "Register": "x13"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x29"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 31
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbuiltin",
+                        "Args": [
+                            {
+                                "ExternalFunction": {
+                                    "ExternalFunction": "EF_builtin",
+                                    "Name": "__builtin_subl"
+                                }
+                            },
+                            {
+                                "Args": [
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x29"
+                                            },
+                                            "Lo": {
+                                                "Register": "x28"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x17"
+                                            },
+                                            "Lo": {
+                                                "Register": "x16"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Res": {
+                                    "SplitLong": {
+                                        "Hi": {
+                                            "Register": "x11"
+                                        },
+                                        "Lo": {
+                                            "Register": "x10"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x10"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x17"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x13"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x15"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x28"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x5"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x17"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 20
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x8"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "memcpy"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 32
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_sign_counter_ok",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "memcpy"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x14"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x15"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": -256
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x30"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x29"
+                            },
+                            {
+                                "Register": "x30"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 4080
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Register": "x17"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pslliw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pluiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Integer": 1044480
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x31"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x10"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x13"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x6"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxoriw",
+                        "Args": [
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbuiltin",
+                        "Args": [
+                            {
+                                "ExternalFunction": {
+                                    "ExternalFunction": "EF_builtin",
+                                    "Name": "__builtin_subl"
+                                }
+                            },
+                            {
+                                "Args": [
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x6"
+                                            },
+                                            "Lo": {
+                                                "Register": "x5"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x13"
+                                            },
+                                            "Lo": {
+                                                "Register": "x12"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Res": {
+                                    "SplitLong": {
+                                        "Hi": {
+                                            "Register": "x10"
+                                        },
+                                        "Lo": {
+                                            "Register": "x5"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxoriw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Porw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x15"
+                            },
+                            {
+                                "Register": "x5"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxorw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psrliw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 31
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x17"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x16"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbuiltin",
+                        "Args": [
+                            {
+                                "ExternalFunction": {
+                                    "ExternalFunction": "EF_builtin",
+                                    "Name": "__builtin_subl"
+                                }
+                            },
+                            {
+                                "Args": [
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x12"
+                                            },
+                                            "Lo": {
+                                                "Register": "x11"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "SplitLong": {
+                                            "Hi": {
+                                                "Register": "x17"
+                                            },
+                                            "Lo": {
+                                                "Register": "x16"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "Res": {
+                                    "SplitLong": {
+                                        "Hi": {
+                                            "Register": "x15"
+                                        },
+                                        "Lo": {
+                                            "Register": "x28"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pxoriw",
+                        "Args": [
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Register": "x28"
+                            },
+                            {
+                                "Integer": -1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pandiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x14"
+                            },
+                            {
+                                "Integer": 255
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_initialize",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x11"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x10"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x12"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_initialize_write_response"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_initialize_initialize_counter"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x8"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_initialize_initialize_prf_key"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x8"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pmv",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x9"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x8"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw_a",
+                        "Args": [
+                            {
+                                "Register": "x9"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 12
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_s",
+                        "Args": [
+                            {
+                                "Atom": "K2_Ecdsa_Impl_do_initialize_initialize_private_key"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_initialize_initialize_private_key",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 24
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 17
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 32
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "memcpy"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_initialize_initialize_prf_key",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 16
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pjal_s",
+                        "Args": [
+                            {
+                                "Atom": "memcpy"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_initialize_initialize_counter",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 6
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x7"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 56
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbltuw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "ALabel": 6
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_initialize_write_response",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Register": "x6"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x11"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 65
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbltuw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "ALabel": 8
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x10"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Fun Name": "K2_Ecdsa_Impl_do_none",
+                "Fun Storage Class": "Extern",
+                "Fun Alignment": 0,
+                "Fun Section Code": {
+                    "Section Name": "Text"
+                },
+                "Fun Section Literals": {
+                    "Section Name": "Literal",
+                    "Size": 0
+                },
+                "Fun Section Jumptable": {
+                    "Section Name": "Jumptable"
+                },
+                "Fun Inline": false,
+                "Fun Code": [
+                    {
+                        "Instruction Name": "Pallocframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plabel",
+                        "Args": [
+                            {
+                                "ALabel": 6
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddw",
+                        "Args": [
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Register": "x12"
+                            },
+                            {
+                                "Register": "x7"
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Psb",
+                        "Args": [
+                            {
+                                "Register": "x5"
+                            },
+                            {
+                                "Register": "x6"
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Integer": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Paddiw",
+                        "Args": [
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "Register": "x0"
+                            },
+                            {
+                                "Integer": 65
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pbltuw",
+                        "Args": [
+                            {
+                                "Register": "x7"
+                            },
+                            {
+                                "Register": "x31"
+                            },
+                            {
+                                "ALabel": 6
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Plw",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            },
+                            {
+                                "Register": "x2"
+                            },
+                            {
+                                "Integer": 4
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pfreeframe",
+                        "Args": [
+                            {
+                                "Integer": 16
+                            },
+                            {
+                                "Integer": 0
+                            }
+                        ]
+                    },
+                    {
+                        "Instruction Name": "Pj_r",
+                        "Args": [
+                            {
+                                "Register": "x1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

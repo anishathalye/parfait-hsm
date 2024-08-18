@@ -1,0 +1,6 @@
+verilator_*/
+*.sim
+*.log
+*.sock
+*.pipe
+combined.v
