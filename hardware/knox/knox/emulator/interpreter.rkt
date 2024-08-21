@@ -179,7 +179,7 @@
     equal?
     ;; list
     cons car cdr caar cadr cdar cddr null? empty? first second third fourth list? list list-ref length reverse append
-    null first second third fourth fifth sixth seventh eighth ninth tenth last rest
+    null first second third fourth fifth sixth seventh eighth ninth tenth last rest take drop
     ;; vector (only immutable)
     vector? vector-immutable vector-length vector-ref vector-set vector->list list->immutable-vector
     ;; boolean

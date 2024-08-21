@@ -170,19 +170,6 @@
           (define ckt (lens-view (lens 'interpreter 'globals 'circuit) (get-state)))
           (when (and (equal? (get-field ckt 'wrapper.soc.cpu.reg_pc) (bv #x618 32)) (equal? (get-field ckt 'wrapper.soc.cpu.cpu_state) (bv #x20 8)))
             (displayln "begin syncing")
-            (begin-sync! (mapping
-                          (lens "wrapper.soc.cpu")
-                          (lambda (c)
-                            (let* ([instr-valid (and (not (bvzero? (get-field c 'wrapper.soc.cpu.decoder_trigger))) (bvzero? (get-field c 'wrapper.soc.cpu.decoder_pseudo_trigger)))]
-                                   [instr (get-field c 'wrapper.soc.cpu.mem_rdata_q)])
-                              (and instr-valid instr)))
-                          (lambda (c) (not (concrete? (get-field c 'wrapper.soc.cpu.reg_pc))))
-                          1
-                          1
-                          'wrapper.soc.cpu.cpuregs
-                          'wrapper.soc.ram.ram
-                          (lambda (impl-ptr) (!eqv? (bveq (extract 31 24 impl-ptr) (bv #x20 8)) #t))
-                          (bv #x20000000 32)
-                          'wrapper.soc.cpu.reg_pc)))
+            (begin-sync! picorv32-mapping))
           ;; call auto-sync
           (auto-sync!))]))

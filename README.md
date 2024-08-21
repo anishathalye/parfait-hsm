@@ -28,7 +28,9 @@ There are 2 x 2 directories in `hardware/hsms`, one for each combination of soft
 
 You can cd into `proof` and run `racket correctness.rkt` to run the proof check. The password hasher should verify in about 10 minutes. ECDSA takes 100+ hours.
 
-We've committed some of the binaries (such as the CompCert JSON output, and the `hsm.smt2` Yosys output), if you want to re-use those and just run the verification, rather than building them yourself.
+You can run `racket security.rkt` to run the security proof; this one takes longer than the correctness proof. The proof checker returns a zero exit code upon success; if there's a failure, it'll print a failure message along with returning a non-zero exit code.
+
+We've committed some of the binaries (such as the CompCert JSON output, and the `hsm.smt2` Yosys output), if you want to re-use those and just run the verification, rather than building them yourself. If you'd like to build them yourself, you can `cd spec; make` to build the CompCert JSON files, and `cd proof; make` to build the `hsm.rkt` circuit representation.
 
 Note that some of the proofs depend on the compiler output, so if you use a different version of the compiler, you will have to adjust those proofs.
 

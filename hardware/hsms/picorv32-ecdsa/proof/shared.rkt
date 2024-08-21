@@ -2,9 +2,11 @@
 
 (require rosutil
          "../spec/spec.rkt"
-         (only-in racket/list range))
+         (only-in racket/list range)
+         parfait/sync
+         (prefix-in ! racket/base))
 
-(provide AbsF R I)
+(provide AbsF R R* I picorv32-mapping)
 
 (define (split32le b)
   (list
@@ -35,11 +37,31 @@
    (split32le (if active0 (vector-ref fram 14) (vector-ref fram 28)))
    (split32le (if active0 (vector-ref fram 15) (vector-ref fram 29)))))
 
+(define (R* f ci)
+  (equal? (AbsF ci) f))
+
 (define (R f ci)
-  #;(printf "R AbsF~n  ci: ~v~n  f: ~v~n  I: ~v~n" (AbsF ci) f (I ci))
   (&&
    (equal? (AbsF ci) f)
    (I ci)))
 
 (define (I ci)
-  (bveq (get-field ci 'wrapper.pwrmgr_state) (bv #b01 2)))
+  (and
+   (bveq (get-field ci 'wrapper.pwrmgr_state) (bv #b01 2))
+   (equal? (get-field ci 'resetn) #t)))
+
+(define picorv32-mapping
+  (mapping
+   (lens "wrapper.soc.cpu")
+   (lambda (c)
+     (let* ([instr-valid (and (not (bvzero? (get-field c 'wrapper.soc.cpu.decoder_trigger))) (bvzero? (get-field c 'wrapper.soc.cpu.decoder_pseudo_trigger)))]
+            [instr (get-field c 'wrapper.soc.cpu.mem_rdata_q)])
+       (and instr-valid instr)))
+   (lambda (c) (not (concrete? (get-field c 'wrapper.soc.cpu.reg_pc))))
+   1
+   1
+   'wrapper.soc.cpu.cpuregs
+   'wrapper.soc.ram.ram
+   (lambda (impl-ptr) (!eqv? (bveq (extract 31 24 impl-ptr) (bv #x20 8)) #t))
+   (bv #x20000000 32)
+   'wrapper.soc.cpu.reg_pc))

@@ -157,20 +157,6 @@
      (define ckt (lens-view (lens 'interpreter 'globals 'circuit) (get-state)))
      (when (and (equal? (get-field ckt 'wrapper.soc.cpu.u_ibex_core.if_stage_i.pc_id_o) (bv #x618 32)))
        (displayln "begin syncing")
-       (begin-sync! (mapping
-                     (lens "wrapper.soc.cpu.")
-                     (lambda (c)
-                       (let* ([instr-valid (bveq (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.instr_valid_id_q) (bv 1 1))]
-                              [instr (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.instr_rdata_id_o)])
-                         (and instr-valid instr)))
-                     (lambda (c) (not (concrete? (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.pc_id_o))))
-                     1
-                     1
-                     (for/vector ([i (range 32)])
-                       (string->symbol (format "wrapper.soc.cpu.gen_regfile_ff.register_file_i.g_rf_flops[~a].rf_reg_q" i)))
-                     'wrapper.soc.ram.ram
-                     (lambda (impl-ptr) (!eqv? (bveq (extract 31 24 impl-ptr) (bv #x20 8)) #t))
-                     (bv #x20000000 32)
-                     'wrapper.soc.cpu.u_ibex_core.if_stage_i.pc_id_o)))
+       (begin-sync! ibex-mapping))
      ;; call auto-sync
      (auto-sync!))]))

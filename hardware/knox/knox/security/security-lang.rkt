@@ -75,7 +75,9 @@
                         'remember+!
                         'clear!
                         'subst!
+                        'history!
                         'begin-sync!
+                        'sync-abstract!
                         'syncing?)])
              (if (pair? elem)
                  (wrap #'proof (format-id stx "~a" (car elem)) (format-id stx "~a" (cdr elem)))

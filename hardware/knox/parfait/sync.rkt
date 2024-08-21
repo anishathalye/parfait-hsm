@@ -58,7 +58,7 @@
 ;; note: for now, we don't actually track the branch condition here, for any splits done here,
 ;; to keep things simple; shouldn't be necessary for Parfait VMs; this is sound, but it might
 ;; prevent us from verifying some circuits
-(define (sync c s state spec #:verbose [verbose #f])
+(define (sync c s state spec #:verbose [verbose #f] #:abstract [abstract #t])
   (match-define (sync-state mapping flag) state)
   (cond
     [(halted? s)
@@ -80,8 +80,8 @@
           (define c1 (@lens-transform (mapping-cpu-lens mapping)
                                       c
                                       (lambda (view) (@concretize view path-cond #:piecewise #t))))
-          (define-values (c2 s3) (sync-registers c1 s2 mapping #:verbose verbose))
-          (define-values (c3 s4) (sync-all-buffers c2 s3 mapping #:verbose verbose))
+          (define-values (c2 s3) (sync-registers c1 s2 mapping #:verbose verbose #:abstract abstract))
+          (define-values (c3 s4) (sync-all-buffers c2 s3 mapping #:verbose verbose #:abstract abstract))
           (list c3 s4 (sync-state mapping #f) path-cond))]
        [else
         ;; keep waiting
@@ -106,7 +106,7 @@
                   (@get-field c (mapping-program-counter mapping))
                   (regfile-pc (machine-registers s))
                   (get-current-instruction s (spec-environment spec))))
-        (define-values (c1 s1) (sync-all-buffers c s mapping #:verbose verbose))
+        (define-values (c1 s1) (sync-all-buffers c s mapping #:verbose verbose #:abstract abstract))
         (list (list c1 s1 (sync-state mapping #f) #t))])]
     [(and (sync-arithmetic? flag) (is-hardware-valid-instruction? c mapping))
      ;; sync registers, clear flag, and re-run sync (to do any other steps we might do)
@@ -120,8 +120,8 @@
                   (@get-field c (mapping-program-counter mapping))
                   (regfile-pc (machine-registers s1))
                   (get-current-instruction s1 (spec-environment spec))))
-        (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose))
-        (sync c1 s2 (sync-state mapping #f) spec #:verbose verbose)])]
+        (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose #:abstract abstract))
+        (sync c1 s2 (sync-state mapping #f) spec #:verbose verbose #:abstract abstract)])]
     [(and (sync-branch? flag) (> (sync-branch-n flag) 0))
      (list (list c s (sync-state mapping (sync-branch (sub1 (sync-branch-n flag)))) #t))]
     [(or (and (sync-branch? flag) (= (sync-branch-n flag) 0))
@@ -134,15 +134,15 @@
         (cond
           [(> (length conds) 1)
            ;; register symbolic branch, deal with it later (or now, if triggered)
-           (sync c s1 (sync-state mapping (sync-symbolic-branch)) spec #:verbose verbose)]
+           (sync c s1 (sync-state mapping (sync-symbolic-branch)) spec #:verbose verbose #:abstract abstract)]
           [else
            (when verbose
              (printf "SYNC branch @ ~v --- ~v [~v]~n"
                      (@get-field c (mapping-program-counter mapping))
                      (regfile-pc (machine-registers s1))
                      (get-current-instruction s1 (spec-environment spec))))
-           (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose))
-           (define-values (c2 s3) (sync-all-buffers c1 s2 mapping #:verbose verbose))
+           (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose #:abstract abstract))
+           (define-values (c2 s3) (sync-all-buffers c1 s2 mapping #:verbose verbose #:abstract abstract))
            (define s4 (step1 s3 spec))
            (list (list c2 s4 (sync-state mapping #f) #t))])])]
     [(is-hardware-entry-exit? c mapping)
@@ -156,8 +156,8 @@
                   (@get-field c (mapping-program-counter mapping))
                   (regfile-pc (machine-registers s1))
                   (get-current-instruction s1 (spec-environment spec))))
-        (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose))
-        (define-values (c2 s3) (sync-buffer-args c1 s2 mapping #:verbose verbose))
+        (define-values (c1 s2) (sync-registers c s1 mapping #:verbose verbose #:abstract abstract))
+        (define-values (c2 s3) (sync-buffer-args c1 s2 mapping #:verbose verbose #:abstract abstract))
         (define s4 (step1 s3 spec))
         (list (list c2 s4 state #t))])]
     [(is-hardware-branch? c mapping)
@@ -186,7 +186,7 @@
 ;; synchronization
 
 ;; returns two values, a new c and a new s
-(define (sync-registers c s mapping #:verbose [verbose #f] #:abstract [abstract #t])
+(define (sync-registers c s mapping #:verbose [verbose #f] #:abstract abstract)
   (when verbose
     (printf "sync-registers!~n"))
   (define impl-registers-name (mapping-registers mapping))
@@ -234,23 +234,23 @@
   (values c s))
 
 ;; for arguments that are pointers, sync up buffers
-(define (sync-buffer-args c s mapping #:verbose [verbose #f] #:abstract [abstract #t])
+(define (sync-buffer-args c s mapping #:verbose [verbose #f] #:abstract abstract)
   (when verbose
     (printf "sync-buffer-args!~n"))
   (sync-buffers c s mapping (range 10 17) #:verbose verbose #:abstract abstract))
 
-(define (sync-all-buffers c s mapping #:verbose [verbose #f] #:abstract [abstract #t])
+(define (sync-all-buffers c s mapping #:verbose [verbose #f] #:abstract abstract)
   (when verbose
     (printf "sync-all-buffers!~n"))
   (sync-buffers c s mapping (range 2 31) #:verbose verbose #:abstract abstract))
 
-(define (sync-current-stack-frame c s mapping #:verbose [verbose #f] #:abstract [abstract #t])
+(define (sync-current-stack-frame c s mapping #:verbose [verbose #f] #:abstract abstract)
   (when verbose
     (printf "sync-current-stack-frame!~n"))
   (sync-buffers c s mapping (list 2) #:verbose verbose #:abstract abstract))
 
 ;; returns two values, a new c and a new s
-(define (sync-buffers c s mapping iregs #:verbose [verbose #f] #:abstract [abstract #t])
+(define (sync-buffers c s mapping iregs #:verbose [verbose #f] #:abstract abstract)
   (define impl-registers-name (mapping-registers mapping))
   (define ram (@get-field c (mapping-ram mapping)))
   ;; updates in terms of blocks, mapping from addr%4 -> list of (3, 2, 1, 0)

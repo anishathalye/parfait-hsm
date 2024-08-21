@@ -2,9 +2,12 @@
 
 (require rosutil
          "../spec/spec.rkt"
+         parfait/sync
+         (only-in racket/base for/vector string->symbol)
+         (prefix-in ! (only-in racket/base eqv?))
          (only-in racket/list range))
 
-(provide AbsF R I)
+(provide AbsF R R* I ibex-mapping)
 
 (define (split32le b)
   (list
@@ -26,6 +29,9 @@
    (split32le (if active0 (vector-ref fram 5) (vector-ref fram 10)))
    (split32le (if active0 (vector-ref fram 6) (vector-ref fram 11)))))
 
+(define (R* f ci)
+  (equal? (AbsF ci) f))
+
 (define (R f ci)
   #;(printf "R AbsF~n  ci: ~v~n  f: ~v~n  I: ~v~n" (AbsF ci) f (I ci))
   (&&
@@ -33,4 +39,23 @@
    (I ci)))
 
 (define (I ci)
-  (bveq (get-field ci 'wrapper.pwrmgr_state) (bv #b01 2)))
+  (and
+   (bveq (get-field ci 'wrapper.pwrmgr_state) (bv #b01 2))
+   (equal? (get-field ci 'resetn) #t)))
+
+(define ibex-mapping
+  (mapping
+   (lens "wrapper.soc.cpu.")
+   (lambda (c)
+     (let* ([instr-valid (bveq (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.instr_valid_id_q) (bv 1 1))]
+            [instr (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.instr_rdata_id_o)])
+       (and instr-valid instr)))
+   (lambda (c) (not (concrete? (get-field c 'wrapper.soc.cpu.u_ibex_core.if_stage_i.pc_id_o))))
+   1
+   1
+   (for/vector ([i (range 32)])
+     (string->symbol (format "wrapper.soc.cpu.gen_regfile_ff.register_file_i.g_rf_flops[~a].rf_reg_q" i)))
+   'wrapper.soc.ram.ram
+   (lambda (impl-ptr) (!eqv? (bveq (extract 31 24 impl-ptr) (bv #x20 8)) #t))
+   (bv #x20000000 32)
+   'wrapper.soc.cpu.u_ibex_core.if_stage_i.pc_id_o))

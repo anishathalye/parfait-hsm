@@ -36,6 +36,8 @@
     (init-field emulator)
     (init-field R)
     (init-field R*)
+    (init-field [history #t])
+    (init-field [sync-abstract #f])
 
     (define meta (circuit-meta circuit))
 
@@ -158,6 +160,9 @@
       (define emulator-with-input (result-state (emulator-interpret `(with-input ',input) (pairing-emulator focus-term) focus-pred)))
       (set! next (cons (set (pairing c-with-input emulator-with-input) focus-pred focus-eq #t sync-state) (rest next))))
 
+    (define/public (history! on)
+      (set! history on))
+
     (define/public (step!)
       (unless (set-ready-to-step (first next))
         (prepare!))
@@ -199,7 +204,7 @@
       (define stepped
         (if (and sync-state (emulator:executing? o1))
             ;; need to sync
-            (for/list ([res (parfait:sync c1 (emulator:executing-machine o1) sync-state spec #:verbose #t)])
+            (for/list ([res (parfait:sync c1 (emulator:executing-machine o1) sync-state spec #:verbose #t #:abstract sync-abstract)])
               (match-define (list c* s* sync-state* pred*) res)
               (set
                (pairing
@@ -220,7 +225,8 @@
               #f
               sync-state))))
       (prepare!) ; what's about to go in visited, make inputs symbolic
-      (set! visited (cons (first next) visited))
+      (when history
+        (set! visited (cons (first next) visited)))
       (set! next (append stepped (rest next))))
 
     (define/public (cases! preds #:use-equalities [use-equalities #f])
@@ -245,6 +251,9 @@
         (error 'begin-sync! "already syncing"))
       (define new (set focus-term focus-pred focus-eq focus-ready (parfait:new-sync-state mapping)))
       (set! next (cons new (rest next))))
+
+    (define/public (sync-abstract! abstract)
+      (set! sync-abstract abstract))
 
     (define/public (syncing?)
       (match-define (set focus-term focus-pred focus-eq focus-ready sync-state) (first next))
