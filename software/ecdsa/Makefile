@@ -1,4 +1,4 @@
-all: dist/libk2.a
+all: build
 
 # Boilerplate
 # -----------
@@ -44,7 +44,8 @@ hints obj:
 KRML=$(KRML_HOME)/krml
 
 # The usual bug with prims.krml
-dist/Makefile.basic: $(filter-out %prims.krml,$(ALL_KRML_FILES))
+.PHONY: build
+build: $(filter-out %prims.krml,$(ALL_KRML_FILES))
 	$(KRML) $(KOPTS) -library EverCrypt,EverCrypt.* $^ -tmpdir dist -skip-compilation \
 	  -minimal \
 	  -add-include '"krml/internal/target.h"' \

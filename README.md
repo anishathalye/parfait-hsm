@@ -15,8 +15,6 @@ See the two applications (PasswordHasher and ECDSA) in `software`.
 
 You can cd into the appropriate directory and run `make` to build. You'll see messages that say all verification conditions have been discharged successfully, and it'll produce the C files in `dist/`.
 
-The build script currently tries to build binaries for the host machine, which we don't use (we use CompCert in the Hardware verification step; this produces some errors for the Password Hasher, at the end. You can ignore them.
-
 ### Dependencies
 
 - Install F\* using the [Everest script](https://fstarlang.github.io/lowstar/html/Setup.html#installing-the-tools). Set your `$FSTAR_HOME` and `$KRML_HOME` appropriately.
