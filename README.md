@@ -3,6 +3,10 @@
 This repository contains / links to three parts: verification of IPR theory,
 verification of software, and verification of hardware.
 
+## Virtual Machine
+
+For easier setup, you can use the provided virtual machine: [x.anish.io/parfait-vm.tar.gz](https://x.anish.io/parfait-vm.tar.gz). The VM already has all dependencies and tools installed. We provide a `.qcow2` image (for a Debian 12 machine), along with a `.xml` file you can [use with libvirt](https://chatgpt.com/share/06960c56-0232-4973-95ce-f59a0b08d548). If you would like to use SSH to connect to this machine, it has sshd running. The user account is `parfait` and the password is `parfait`. We've already cloned this repository, in `~/src/parfait-hsm`.
+
 ## IPR Theory
 
 We've formalized the theory of IPR in a self-contained repository. You can find it here: <https://github.com/anishathalye/ipr>.
