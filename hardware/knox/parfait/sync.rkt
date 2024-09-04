@@ -11,7 +11,6 @@
  (prefix-in @ (combine-in rosette/safe rosutil))
  racket/match racket/list)
 
-
 (provide
  (struct-out mapping)
  new-sync-state
@@ -87,7 +86,7 @@
         ;; keep waiting
         (list (list c s state #t))])]
     ;; memcpy is early, to intercept everything that happens between nops
-    [(sync-memcpy? flag)
+    #;[(sync-memcpy? flag)
      (cond
        [(eqv? (sync-memcpy-n flag) #f)
         (cond
@@ -165,7 +164,7 @@
      (list
       (list c s (sync-state mapping (sync-branch (sub1 (mapping-branch-delay mapping)))) #t))]
     ;; have to check nop before arithmetic, because nop is arithmetic
-    [(is-hardware-nop? c mapping)
+    #;[(is-hardware-nop? c mapping)
      ;; step spec until it's past memcpy
      (define s1 (step1 (step-until s is-software-memcpy? spec) spec))
      (list
