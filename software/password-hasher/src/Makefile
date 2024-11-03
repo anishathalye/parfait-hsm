@@ -1,2 +1,2 @@
-K2_HOME=..
+MERKLE_HOME=..
 include ../Makefile.include
