@@ -3,6 +3,8 @@
 This repository contains / links to three parts: verification of IPR theory,
 verification of software, and verification of hardware.
 
+Note: this repository is currently being refactored to split out the software verification framework into https://github.com/anishathalye/starling, merge Knox2 with the main Knox release at https://github.com/anishathalye/knox, and have a Docker image and nicer build scripts for the verified HSMs in this repo. If you're planning to write code on top of this research (as others have done on top of Knox 1.0), we suggest you contact Anish (aathalye@mit.edu) to check in on the status of this refactor.
+
 ## Virtual Machine
 
 For easier setup, you can use the provided virtual machine: [x.anish.io/parfait-vm.tar.gz](https://x.anish.io/parfait-vm.tar.gz). The VM already has all dependencies and tools installed. We provide a `.qcow2` image (for a Debian 12 machine), along with a `.xml` file you can [use with libvirt](https://chatgpt.com/share/06960c56-0232-4973-95ce-f59a0b08d548). If you would like to use SSH to connect to this machine, it has sshd running. The user account is `parfait` and the password is `parfait`. We've already cloned this repository, in `~/src/parfait-hsm`.
